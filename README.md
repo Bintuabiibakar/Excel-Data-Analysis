@@ -1,0 +1,304 @@
+# 🏠 Real Estate Property Data Analysis Using Excel
+
+An Excel-based data analysis project focused on **data cleaning, quality inspection, analysis, PivotTables, and dashboard visualization** using real estate property data.
+
+## 📌 Project Overview
+
+This university project analyzes a real estate dataset using Microsoft Excel.
+
+The workflow starts with raw property data, performs data-quality inspection and cleaning, applies Excel formulas and functions for analysis, creates PivotTables and PivotCharts, and finishes with two interactive dashboards and a findings sheet.
+
+### Main Objectives
+
+* Inspect the quality of the raw dataset
+* Identify and remove duplicate records
+* Handle missing values
+* Standardize inconsistent text and category values
+* Create calculated fields
+* Analyze property prices, sizes, bedrooms, dates, types, and locations
+* Build PivotTables and PivotCharts
+* Create professional dashboards
+* Present key findings and recommendations
+
+---
+
+## 📊 Dataset Summary
+
+| Item                           |    Result |
+| ------------------------------ | --------: |
+| Raw records                    |       300 |
+| Duplicate records removed      |         8 |
+| Clean records                  |       292 |
+| Missing values before cleaning |       111 |
+| 2025 listings                  |       169 |
+| 2026 listings                  |       107 |
+| Most common property type      | Apartment |
+| Most common location           | Mogadishu |
+
+---
+
+## 📁 Workbook Structure
+
+| Sheet           | Description                                 |
+| --------------- | ------------------------------------------- |
+| **Raw_Data**    | Original dataset before cleaning            |
+| **Clean_Data**  | Cleaned dataset and calculated fields       |
+| **Analysis**    | Data-quality summary and analytical metrics |
+| **PivotTables** | PivotTable-based analysis                   |
+| **Dashboard_1** | Overview dashboard                          |
+| **Dashboard_2** | Detailed analysis dashboard                 |
+| **Findings**    | Key findings and recommendations            |
+
+---
+
+## 🔄 Project Workflow
+
+```text
+Raw Data
+   ↓
+Data Quality Inspection
+   ↓
+Duplicate & Missing Value Handling
+   ↓
+Text / Category Standardization
+   ↓
+Clean Data
+   ↓
+Excel Analysis
+   ↓
+PivotTables & Charts
+   ↓
+Dashboards
+   ↓
+Findings & Recommendations
+```
+
+---
+
+## 🔍 Step-by-Step Process
+
+### 1. Inspect the Raw Data
+
+The `Raw_Data` sheet contains the original dataset and was kept as the starting point for the analysis.
+
+![Raw Data](screenshots/01-raw-data.png)
+
+---
+
+### 2. Check Data Quality
+
+The raw dataset was inspected for:
+
+* Duplicate Property IDs
+* Blank rows
+* Missing values
+* Extra spaces
+* Inconsistent capitalization
+* Inconsistent categories
+* Unknown or invalid values
+
+### Before Cleaning
+
+* **300** total records
+* **8** duplicate records
+* **111** missing values
+* **0** blank rows
+
+![Data Quality Before Cleaning](screenshots/03-data-quality-before.png)
+
+---
+
+### 3. Clean the Data
+
+Duplicate records were removed, missing and inconsistent values were handled, and text/category fields were standardized.
+
+The `Clean_Data` sheet also contains calculated fields such as:
+
+* `Price_Category`
+* `Days Since Listing`
+* `ID_Extracted`
+* `Location Length`
+* `Standardized`
+* `Year`
+
+![Clean Data](screenshots/02-clean-data.png)
+
+---
+
+### 4. Verify the Cleaning
+
+After the cleaning process, the dataset contained **292 records**.
+
+Duplicate records and blank rows were removed, while identified missing and inconsistent values were handled.
+
+![Data Quality After Cleaning](screenshots/04-data-quality-after.png)
+
+---
+
+## 🧮 Excel Analysis
+
+Several Excel formulas and functions were used to calculate descriptive statistics, count records, analyze dates, and identify the most common categories.
+
+Examples include:
+
+```excel
+=COUNTA(Clean_Data!A2:A1000)
+
+=AVERAGE(Clean_Data!G2:G293)
+
+=MIN(Clean_Data!G2:G293)
+
+=MAX(Clean_Data!G2:G293)
+
+=COUNTBLANK(Raw_Data!A2:A301)
+
+=COUNTIFS(PropertyTable[Listing_Date],">="&DATE(2025,1,1),PropertyTable[Listing_Date],"<"&DATE(2026,1,1))
+
+=COUNTIFS(PropertyTable[Listing_Date],">="&DATE(2026,1,1),PropertyTable[Listing_Date],"<"&DATE(2027,1,1))
+
+=INDEX(Clean_Data!C2:C293,MODE(MATCH(Clean_Data!C2:C293,Clean_Data!C2:C293,0)))
+```
+
+These formulas were used to support the analysis of:
+
+* Total properties
+* Average price
+* Minimum and maximum price
+* Missing values
+* Listings by year
+* Most common property type
+* Most common location
+
+---
+
+## 📈 PivotTable Analysis
+
+The `PivotTables` sheet provides summarized analysis of the cleaned dataset.
+
+The analysis covers:
+
+* Properties by location
+* Properties by property type
+* Price analysis
+* Size analysis
+* Bedroom distribution
+* Average prices by location
+* Property counts by category
+
+PivotCharts were also used to make the results easier to interpret.
+
+---
+
+# 📌 Key Results
+
+| Metric                    |          Result |
+| ------------------------- | --------------: |
+| Properties after cleaning |         **292** |
+| Duplicate records removed |           **8** |
+| Missing values identified |         **111** |
+| Listings in 2025          |         **169** |
+| Listings in 2026          |         **107** |
+| Most common property type |   **Apartment** |
+| Apartment properties      |          **96** |
+| Top location              |   **Mogadishu** |
+| Mogadishu properties      |         **101** |
+| Average price             | **$178,870.73** |
+| Average size              |  **294.53 sqm** |
+| Average bedrooms          |        **2.63** |
+| Highest recorded price    |  **$2,000,022** |
+
+---
+
+# 📊 Dashboard 1: Overview
+
+The first dashboard provides a high-level overview of the real estate dataset.
+
+It presents key metrics and visualizations that allow users to quickly understand the overall property market.
+
+![Dashboard 1](screenshots/05-dashboard-overview.png)
+
+---
+
+# 📊 Dashboard 2: Detailed Analysis
+
+The second dashboard provides deeper analysis of:
+
+* Property prices
+* Property values
+* Property types
+* Property sizes
+* Bedroom distribution
+* Location-based analysis
+
+![Dashboard 2](screenshots/06-dashboard-analysis.png)
+
+---
+
+# 💡 Key Findings
+
+1. **Mogadishu** has the highest number of properties, with **101 listings**.
+
+2. **Apartments** are the most common property type, with **96 properties**.
+
+3. Mogadishu has the highest average property price, at approximately **$209,588**.
+
+4. **Garowe** has the second-highest average property price, at approximately **$206,754**.
+
+5. The data quality improved after cleaning, with **8 duplicate records removed** and identified missing/inconsistent values handled.
+
+![Key Findings](screenshots/07-key-findings.png)
+
+---
+
+# 💡 Recommendations
+
+* Focus further analysis on **Mogadishu** because it has the largest number of listings and a high average property price.
+* Monitor the **apartment market** because apartments represent the largest property-type group.
+* Compare property prices across locations to better understand differences in market value.
+* Continue regular data cleaning to reduce duplicate, missing, and unknown information.
+* Use the dashboards and PivotTables for easier monitoring and comparison of property trends.
+
+---
+
+# 🛠️ Tools & Excel Features
+
+* Microsoft Excel
+* Excel Tables
+* Excel Formulas & Functions
+* Conditional Formatting
+* Sorting & Filtering
+* Data Cleaning
+* PivotTables
+* PivotCharts
+* Slicers
+* Dashboard Design
+
+---
+
+# 📂 Repository Structure
+
+```text
+Real-Estate-Property-Data-Analysis/
+│
+├── Real Estate Property Data Analysis Using Excel.xlsx
+├── README.md
+│
+└── screenshots/
+    ├── 01-raw-data.png
+    ├── 02-clean-data.png
+    ├── 03-data-quality-before.png
+    ├── 04-data-quality-after.png
+    ├── 05-dashboard-overview.png
+    ├── 06-dashboard-analysis.png
+    └── 07-key-findings.png
+
+```
+
+---
+
+
+# 🎓 Project Type
+
+**Project Title:** Real Estate Property Data Analysis Using Excel
+
+**Focus:** Data Cleaning • Data Analysis • PivotTables • Data Visualization • Excel Dashboards
