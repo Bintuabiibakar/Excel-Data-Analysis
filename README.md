@@ -224,8 +224,4 @@ Real-Estate-Property-Data-Analysis/
 5.  Open `Dashbroad_1` and `Dashbroad_2`.
 6.  Open `Findings` for the final conclusions.
 
-## Author
 
-**Real Estate Property Data Analysis Using Excel**
-
-Cayni abukar maxamu
